@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<html lang="em">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jokes Ka Pitra</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jokes Ka Pitra</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-  </head>
-  <body>
-    <div class="bg-primary p-2 fs-4 fw-bold text-light text-center">
-      Jokes Ka Pitra... with goru !!
-    </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
 
-    <main>
-      <div class="container p-3 border shadow mt-3 rounded-3">
-        <!-- Area for Jokes -->
-        <p id="setup">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam ullam,
-          pariatur eum rerum nostrum, corporis beatae id laborum, dignissimos
-          incidunt sed itaque voluptate! Quam ipsa ad maiores, dolore recusandae
-          veritatis.
-        </p>
-        <p id="punchline">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, harum!</p>
-        <br>
-        <hr>
+<body id="body" class="bg-light text-dark">
 
-        <button class="btn btn-primary" onclick="GetNewJoke()">
-          Get Random Jokes
-        </button>
+  <div class="bg-primary text-white py-3 fs-4 fw-bold d-flex justify-content-between px-3">
+    <span><i class="bi bi-emoji-laughing-fill"></i> Jokes Ka Pitra</span>
+    <button class="btn btn-sm btn-light" onclick="toggleDark()">
+      <i class="bi bi-moon-fill"></i>
+    </button>
+  </div>
+
+  <main class="container mt-4">
+    <div id="card" class="card shadow-lg rounded-4">
+      <div class="card-body text-center">
+
+        <div id="mood" class="fs-1 mb-2">😄</div>
+
+        <div class="btn-group mb-3">
+          <button id="hiBtn" class="btn btn-warning active" onclick="setLang('hi')">🇮🇳 Hindi</button>
+          <button id="enBtn" class="btn btn-outline-warning" onclick="setLang('en')">🌍 English</button>
+        </div>
+
+        <div id="categoryBox" class="mb-3 d-none">
+          <select class="form-select text-center" onchange="setCategory(this.value)">
+            <option value="general">General</option>
+            <option value="programming">Programming</option>
+            <option value="knock-knock">Knock Knock</option>
+          </select>
+        </div>
+
+        <p id="setup" class="fs-5">Ready for a joke? 😁</p>
+        <p id="punchline" class="fw-semibold text-secondary fs-5"></p>
+
+        <div class="mt-4">
+          <button class="btn btn-primary btn-lg" onclick="getJoke()">
+            <i class="bi bi-arrow-repeat"></i> New Joke
+          </button>
+        </div>
+
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
